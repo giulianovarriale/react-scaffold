@@ -1,10 +1,16 @@
-import Login from './screens/Login'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Login from "./screens/Login";
 
 function App() {
   return (
-    <div>
-      <Login/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

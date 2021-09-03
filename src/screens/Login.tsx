@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Label, Input, Button } from "@windmill/react-ui";
 
 export default function Login() {
