@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 
-import useCurrentUser from "../concepts/user/hooks/use-current-user";
+import useAuth from "../concepts/auth/use-auth";
 
 interface IProps {
   path: string;
@@ -9,14 +9,14 @@ interface IProps {
 }
 
 export default function PrivateRoute({ path, children }: IProps) {
-  const { isLoading, data: currentUser } = useCurrentUser();
+  const { isLoading, data: auth } = useAuth();
 
   return (
     <Route path={path}>
       {isLoading ? (
         "Loading..."
       ) : (
-        <>{currentUser ? children : <Redirect to="/login" />}</>
+        <>{auth ? children : <Redirect to="/login" />}</>
       )}
     </Route>
   );
