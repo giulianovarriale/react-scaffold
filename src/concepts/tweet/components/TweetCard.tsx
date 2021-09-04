@@ -11,7 +11,11 @@ export default function TweetCard({ tweet }: IProps) {
         <img src={tweet.avatar} alt="Profile" className="rounded-full" />
       </div>
 
-      <div className="ml-4">{tweet.content}</div>
+      <div className="ml-4">
+        <span className="block font-semibold mb-1">{tweet.user.name}</span>
+
+        <p className="text-gray-600">{tweet.content}</p>
+      </div>
     </div>
   );
 }

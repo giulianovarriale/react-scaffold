@@ -13,6 +13,9 @@ export default function useTweets(): IHookApi {
       id,
       avatar: `https://i.pravatar.cc/64?u=${id}`,
       content: faker.lorem.paragraph(1),
+      user: {
+        name: faker.name.findName(),
+      },
     };
   });
 

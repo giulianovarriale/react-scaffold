@@ -1,5 +1,5 @@
 import useTweets from "../hooks/use-tweets";
-import TweetCard from "../components/TweetCard";
+import TweetCard from "./TweetCard";
 
 export default function TweetList() {
   const { data: tweets } = useTweets();

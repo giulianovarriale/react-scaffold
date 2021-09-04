@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import PrivateRoute from "./router/PrivateRoute";
+
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
@@ -21,9 +23,9 @@ function App() {
           <ForgotPassword />
         </Route>
 
-        <Route path="/">
+        <PrivateRoute path="/">
           <Home />
-        </Route>
+        </PrivateRoute>
       </Switch>
     </Router>
   );

@@ -1,5 +1,5 @@
 import DeepFocusLayout from "../layouts/DeepFocusLayout";
-import LoginForm from "../account/components/LoginForm";
+import LoginForm from "../concepts/account/components/LoginForm";
 
 export default function Login() {
   return (

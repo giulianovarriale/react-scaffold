@@ -16,9 +16,18 @@ export default function CommonLayout({ title, children }: IProps) {
               <NavLink
                 to="/"
                 className="block p-3 hover:bg-purple-600 hover:text-white font-semibold text-base rounded-md"
-                activeClassName="bg-purple-600 text-white"
+                activeClassName="bg-gray-100"
               >
                 Home
+              </NavLink>
+            </li>
+            <li className="mt-1">
+              <NavLink
+                to="/login"
+                className="block p-3 hover:bg-purple-600 hover:text-white font-semibold text-base rounded-md"
+                activeClassName="bg-gray-100"
+              >
+                Logout
               </NavLink>
             </li>
           </ul>

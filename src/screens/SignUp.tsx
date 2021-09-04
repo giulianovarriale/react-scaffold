@@ -1,5 +1,5 @@
 import DeepFocusLayout from "../layouts/DeepFocusLayout";
-import SignUpForm from "../account/components/SignUpForm";
+import SignUpForm from "../concepts/account/components/SignUpForm";
 
 export default function SignUp() {
   return (
