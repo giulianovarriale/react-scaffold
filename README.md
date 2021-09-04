@@ -30,4 +30,7 @@ TBD...
 
 ### Custom hooks
 
-TBD...
+Creating custom hooks is a good way to remove complexity from components.
+You define what the hook is going to provide (API) and then you just consume it on the component.
+Custom hooks also make refactorings easier because the component that is using it don't know about the
+implementation details. As long the hook keeps the same API, everything can be changed :).
