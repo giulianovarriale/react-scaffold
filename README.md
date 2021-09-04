@@ -26,7 +26,7 @@ If you have to wrap a route component to extend its behaviour, you can create th
 
 ### Subfolders
 
-TBD...
+Each folder can have its own subfolders, but basically, the subfolders are there to split the files by type. Example: (components, hooks, models, services)
 
 ### Custom hooks
 
