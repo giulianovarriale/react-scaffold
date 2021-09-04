@@ -32,8 +32,6 @@ Introduction TBD...
 ├── layouts
 │   ├── CommonLayout.tsx
 │   └── DeepFocusLayout.tsx
-├── react-app-env.d.ts
-├── reportWebVitals.ts
 ├── router
 │   └── PrivateRoute.tsx
 ├── screens
