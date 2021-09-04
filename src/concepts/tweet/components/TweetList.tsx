@@ -6,7 +6,7 @@ export default function TweetList() {
 
   return (
     <>
-      {tweets.map((tweet, index) => (
+      {tweets?.map((tweet, index) => (
         <div key={tweet.id} className={index > 0 ? "mt-2" : ""}>
           <TweetCard tweet={tweet} />
         </div>

@@ -12,6 +12,7 @@ export default function LoginForm() {
 
   function onSuccess() {
     notify.success("You are logged in :)");
+    history.push("/");
   }
 
   function onError() {
@@ -67,7 +68,9 @@ export default function LoginForm() {
         )}
       </Label>
 
-      <Button className="mt-4 w-full">Log in</Button>
+      <Button type="submit" className="mt-4 w-full">
+        Log in
+      </Button>
 
       <hr className="my-8" />
 

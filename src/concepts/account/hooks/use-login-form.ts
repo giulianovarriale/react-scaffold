@@ -1,3 +1,9 @@
+import { useState } from "react";
+import { useMutation } from "react-query";
+import useAuth from "../../auth/hooks/use-auth";
+
+import login from "../services/login";
+
 interface IHookArgs {
   onSuccess: () => void;
   onError: () => void;
@@ -21,12 +27,32 @@ export default function useLoginForm({
   onSuccess,
   onError,
 }: IHookArgs): IHookApi {
+  const { saveToken } = useAuth();
+  const [email, setEmailField] = useState("");
+  const [password, setPasswordField] = useState("");
+
+  const loginMutation = useMutation(login, {
+    onSuccess: (data) => {
+      saveToken(data.token);
+      onSuccess();
+    },
+  });
+
   return {
-    setEmail(value: string) {},
-    setPassword(value: string) {},
-    submit() {},
     isSubmitting: false,
     hasErrors: false,
     errors: null,
+
+    setEmail(value: string) {
+      setEmailField(value);
+    },
+
+    setPassword(value: string) {
+      setPasswordField(value);
+    },
+
+    async submit() {
+      loginMutation.mutate({ email, password });
+    },
   };
 }

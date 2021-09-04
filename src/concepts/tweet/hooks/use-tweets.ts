@@ -1,23 +1,14 @@
-import faker from "faker";
+import { useQuery } from "react-query";
+
+import getTweets from "../services/getTweets";
 import ITweet from "../models/Tweet";
 
 interface IHookApi {
-  data: ITweet[];
+  data: undefined | ITweet[];
 }
 
 export default function useTweets(): IHookApi {
-  const data: ITweet[] = Array.from({ length: 15 }).map(() => {
-    const id = faker.datatype.uuid();
-
-    return {
-      id,
-      avatar: `https://i.pravatar.cc/64?u=${id}`,
-      content: faker.lorem.paragraph(1),
-      user: {
-        name: faker.name.findName(),
-      },
-    };
-  });
+  const { data } = useQuery("tweets", getTweets);
 
   return { data };
 }

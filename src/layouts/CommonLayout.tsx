@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../concepts/auth/hooks/use-auth";
 
 interface IProps {
   title: string;
@@ -7,6 +8,8 @@ interface IProps {
 }
 
 export default function CommonLayout({ title, children }: IProps) {
+  const { logout } = useAuth();
+
   return (
     <div className="flex h-screen bg-gray-100">
       <aside className="z-30 flex-shrink-0 w-64 overflow-y-auto bg-white p-4 shadow-sm">
@@ -22,13 +25,12 @@ export default function CommonLayout({ title, children }: IProps) {
               </NavLink>
             </li>
             <li className="mt-1">
-              <NavLink
-                to="/login"
-                className="block p-3 hover:bg-purple-600 hover:text-white font-semibold text-base rounded-md"
-                activeClassName="bg-gray-100"
+              <button
+                className="block p-3 hover:bg-purple-600 hover:text-white font-semibold text-base rounded-md w-full text-left"
+                onClick={() => logout()}
               >
                 Logout
-              </NavLink>
+              </button>
             </li>
           </ul>
         </nav>
