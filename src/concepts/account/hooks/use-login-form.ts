@@ -31,7 +31,7 @@ export default function useLoginForm({
   const [email, setEmailField] = useState("");
   const [password, setPasswordField] = useState("");
 
-  const loginMutation = useMutation(login, {
+  const { mutate } = useMutation(login, {
     onSuccess: (data) => {
       saveToken(data.token);
       onSuccess();
@@ -52,7 +52,7 @@ export default function useLoginForm({
     },
 
     async submit() {
-      loginMutation.mutate({ email, password });
+      mutate({ email, password });
     },
   };
 }
